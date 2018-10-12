@@ -96,14 +96,13 @@ public class MarioGame {
 
 
         //variables
-        int score = 0;
+        int userScore = 0;
+        int compScore = 0;
         Scanner keyboard;
+        String playAgain;
         boolean value = true;
         String choice;
-        String mlb [] = new String [3];
-            mlb[0] = "mario";
-            mlb[1] = "luigi";
-            mlb[2] = "bowser";
+        String [] mlb = {"mario","luigi","bowser"};
 
         keyboard = new Scanner(System.in);
 
@@ -119,30 +118,80 @@ public class MarioGame {
         System.out.println("READY?\nLET'S A GO");
 
 
-        while (value){
-            System.out.println("*take your pick (mario  luigi  bowser)*");
+        while (value) {
+            for (int i = 0; i < mlb.length; i++) {
+                System.out.println("*take your pick (mario  luigi  bowser)*");
                 choice = keyboard.nextLine();
-                    if(choice.equals("mario")){
-                                              }
+                int generatedNumber = (int) (Math.random() * 3);
+                System.out.println(mlb[generatedNumber]);
+
+                if (choice.equals("mario")&& mlb[generatedNumber].equals("bowser")) {
+                    userScore++;
+                    System.out.println("MARIO WINS. \nYOU: "+userScore+"\n COMPUTER: "+compScore);
+                    System.out.println(
+                            "                              ███████──███████\n" +
+                            "                       ████▓▓▓▓▓▓████░░░░░██\n" +
+                            "                     ██▓▓▓▓▓▓▓▓▓▓▓▓██░░░░░░██\n" +
+                            "                   ██▓▓▓▓▓▓████████████░░░░██\n" +
+                            "                  ██▓▓▓▓▓▓████████████████░██\n" +
+                            "                  ██▓▓████░░░░░░░░░░░░██████\n" +
+                            "                ████████░░░░░░██░░██░░██▓▓▓▓██\n" +
+                            "                ██░░████░░░░░░██░░██░░██▓▓▓▓██\n" +
+                            "              ██░░░░██████░░░░░░░░░░░░░░██▓▓██\n" +
+                            "              ██░░░░░░██░░░░██░░░░░░░░░░██▓▓██\n" +
+                            "              ██░░░░░░░░░███████░░░░██████\n" +
+                            "                 ████░░░░░░░███████████▓▓██\n" +
+                            "                   ██████░░░░░░░░░░██▓▓▓▓██\n" +
+                            "                  ██▓▓▓▓██████████████▓▓██\n" +
+                            "               ██▓▓▓▓▓▓▓▓████░░░░░░████\n" +
+                            "              ████▓▓▓▓▓▓▓▓██░░░░░░░░░░██\n" +
+                            "              ████▓▓▓▓▓▓▓▓██░░░░░░░░░░██\n" +
+                            "              ██████▓▓▓▓▓▓▓▓██░░░░░░████████\n" +
+                            "                ██████▓▓▓▓▓▓████████████████\n" +
+                            "                 ██████████████████████▓▓▓▓██\n" +
+                            "               ██▓▓▓▓████████████████▓▓▓▓▓▓██\n" +
+                            "              ████▓▓██████████████████▓▓▓▓▓▓██\n" +
+                            "              ██▓▓▓▓██████████████████▓▓▓▓▓▓██\n" +
+                            "              ██▓▓▓▓██████████──────██▓▓▓▓████\n" +
+                            "              ██▓▓▓▓████──────────────██████\n" +
+                            "                ████"); }
+                else if(choice.equals("luigi")&& mlb[generatedNumber].equals("mario")){
+                    userScore++;
+                    System.out.println("LUIGI WINS. \nYOU: "+userScore+"\n COMPUTER: "+compScore);
+                    System.out.println(
+                            "                              █████──███████\n" +
+                            "                       ████▓▓▓▓████         ██\n" +
+                            "                     ██▓▓▓▓▓▓▓▓▓▓██           ██\n" +
+                            "                   ██▓▓▓▓▓▓██████████       ██\n" +
+                            "                  ██▓▓▓▓▓▓██████████████  ██\n" +
+                            "                ██▓▓████                 ██████\n" +
+                            "                ████████      ██   ██    ██▓▓▓▓██\n" +
+                            "                ██   ████      ██   ██        ██▓▓▓▓██\n" +
+                            "              ██       ██████                   █▓▓██\n" +
+                            "              ██        ██   ██                 █▓▓██\n" +
+                            "                ██          ███████       ██████\n" +
+                            "                  ████        ███████████▓▓██\n" +
+                            "                   ██████            ██▓▓▓▓██\n" +
+                            "                  ██▓▓▓▓████████████▓▓██\n" +
+                            "                ██▓▓▓▓▓▓▓▓██        ████\n" +
+                            "              ████▓▓▓▓▓▓██             ██\n" +
+                            "              ████▓▓▓▓▓▓██            ██\n" +
+                            "              ██████▓▓▓▓▓▓██      █████\n" +
+                            "                ██████▓▓▓▓████████████████\n" +
+                            "                  ████████████████████▓▓▓▓██\n" +
+                            "                ██▓▓▓▓██████████████▓▓▓▓▓▓██\n" +
+                            "              ████▓▓████████████████▓▓▓▓▓▓██\n" +
+                            "              ██▓▓▓▓████████████████▓▓▓▓▓▓██\n" +
+                            "              ██▓▓▓▓████████──────██▓▓▓▓████\n" +
+                            "              ██▓▓▓▓████──────────────██████\n" +
+                            "                ████");                                                                    }
+
+                System.out.println("Would you like to play again? (yes or no)");
+                playAgain = keyboard.nextLine();
+
+            }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    }
-
-
-
+        }
     }
 }
