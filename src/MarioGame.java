@@ -102,32 +102,32 @@ public class MarioGame {
         String playAgain;
         boolean value = true;
         String choice;
-        String [] mlb = {"mario","luigi","bowser"};
+        String [] mlb = {"MARIO","LUIGI","BOWSER"};
 
         keyboard = new Scanner(System.in);
 
 
 
 
-        System.out.println("     MARIO\nLUIGI AND BOWSER");
-        System.out.println("HELLO\nWELCOME TO MARIO LUIGI AND BOWSER");
-        System.out.println("THE GAME IS SIMPLE");
+        System.out.println("     MARIO\nLUIGI AND BOWSER\n");
+        System.out.println("\nHELLO\nWELCOME TO MARIO LUIGI AND BOWSER");
+        System.out.println("THE GAME IS SIMPLE:");
         System.out.println("THERE ARE THREE OPTIONS TO CHOOSE FROM:\nMARIO\nLUIGI\nBOWSER");
         System.out.println("MARIO BEATS BOWSER, LUIGI BEATS MARIO, AND BOWSER BEATS LUIGI");
-        System.out.println("YOU TYPE THE CHARACTER OF YOUR CHOICE AND I CHOOSE ONE, AND WHOMEVER WINS GETS A POINT.\n WHOEVER GETS THE MOST POINTS IN THE END WINS");
-        System.out.println("READY?\nLET'S A GO");
-
+        System.out.println("YOU TYPE THE CHARACTER OF YOUR CHOICE AND I CHOOSE ONE, AND WHOEVER WINS GETS A POINT.\nWHOEVER GETS THE MOST POINTS IN THE END WINS"+
+                            "\nBEST OUT OF THREE");
+        System.out.println("\nREADY?\nLET'S A GO\n");
 
         while (value) {
             for (int i = 0; i < mlb.length; i++) {
-                System.out.println("*take your pick (mario  luigi  bowser)*");
+                System.out.println("*take your pick (mario   luigi   bowser)*");
                 choice = keyboard.nextLine();
                 int generatedNumber = (int) (Math.random() * 3);
-                System.out.println(mlb[generatedNumber]);
+                System.out.println("I PICK "+mlb[generatedNumber]);
 
-                if (choice.equals("mario")&& mlb[generatedNumber].equals("bowser")) {
+                if (choice.equals("mario")&& mlb[generatedNumber].equals("BOWSER")) {
                     userScore++;
-                    System.out.println("MARIO WINS. \nYOU: "+userScore+"\n COMPUTER: "+compScore);
+                    System.out.println("MARIO WINS. \nYOU: "+userScore+"\nCOMPUTER: "+compScore);
                     System.out.println(
                             "                              ███████──███████\n" +
                             "                       ████▓▓▓▓▓▓████░░░░░██\n" +
@@ -155,9 +155,9 @@ public class MarioGame {
                             "              ██▓▓▓▓██████████──────██▓▓▓▓████\n" +
                             "              ██▓▓▓▓████──────────────██████\n" +
                             "                ████"); }
-                else if(choice.equals("luigi")&& mlb[generatedNumber].equals("mario")){
+                else if(choice.equals("luigi")&& mlb[generatedNumber].equals("MARIO")){
                     userScore++;
-                    System.out.println("LUIGI WINS. \nYOU: "+userScore+"\n COMPUTER: "+compScore);
+                    System.out.println("LUIGI WINS. \nYOU: "+userScore+"\nCOMPUTER: "+compScore);
                     System.out.println(
                             "                              █████──███████\n" +
                             "                       ████▓▓▓▓████         ██\n" +
@@ -185,13 +185,149 @@ public class MarioGame {
                             "              ██▓▓▓▓████████──────██▓▓▓▓████\n" +
                             "              ██▓▓▓▓████──────────────██████\n" +
                             "                ████");                                                                    }
-
+                else if(choice.equals("bowser")&& mlb[generatedNumber].equals("LUIGI")){
+                    userScore++;
+                    System.out.println("BOWSER WINS. \nYOU: "+userScore+"\nCOMPUTER: "+compScore);
+                    System.out.println(
+                                    "                  ▄█       █            █\n" +
+                                    "                ▐██      ▄█   ███    █▄        ██▌\n" +
+                                    "                ▐██▀     ████████████     ▀██▌\n" +
+                                    "               ▐██▌     ██████████████    ▐██▌\n" +
+                                    "               ████   ███████████████    ████\n" +
+                                    "              ▐█████  ███████████████  █████▌\n" +
+                                    "               ███████████████████████████\n" +
+                                    "               ██████████████████████████\n" +
+                                    "                 ████      ▀█████▀      █████\n" +
+                                    "               ▄▄████▄     █████     ▄████▄▄\n" +
+                                    "              ███████████████████████████\n" +
+                                    "             ████████████████████████████\n" +
+                                    "            ▐██████████▀▄██▄▀████████████\n" +
+                                    "            ▐██████   ███████████   ███████\n" +
+                                    "            ▐██████    ███▀  ▀████   █████▌██\n" +
+                                    "             ██████▄    ███    ███   ▄███████\n" +
+                                    "              ███████     █      █    ████████\n" +
+                                    "               ██████                    ██████\n" +
+                                    "                 ██████                ██████\n" +
+                                    "                  █████   ▄        ▄   █████\n" +
+                                    "                   █████ ██       ██ █████\n" +
+                                    "                   ███████ ▄██▄ ███████\n" +
+                                    "                  █████████████████████\n" +
+                                    "                  █████████████████████\n" +
+                                    "                  ▀████████▀▀█████████▀\n" +
+                                    "                     ▀████▀      ▀█████▀\n");
+                                    }
+                else if(choice.equals("mario")&& mlb[generatedNumber].equals("LUIGI")){
+                    compScore++;
+                    System.out.println("LUIGI WINS. \nYOU: "+userScore+"\nCOMPUTER: "+compScore);
+                    System.out.println(
+                                    "                              █████──███████\n" +
+                                    "                       ████▓▓▓▓████         ██\n" +
+                                    "                     ██▓▓▓▓▓▓▓▓▓▓██           ██\n" +
+                                    "                   ██▓▓▓▓▓▓██████████       ██\n" +
+                                    "                  ██▓▓▓▓▓▓██████████████  ██\n" +
+                                    "                ██▓▓████                 ██████\n" +
+                                    "                ████████      ██   ██    ██▓▓▓▓██\n" +
+                                    "                ██   ████      ██   ██        ██▓▓▓▓██\n" +
+                                    "              ██       ██████                   █▓▓██\n" +
+                                    "              ██        ██   ██                 █▓▓██\n" +
+                                    "                ██          ███████       ██████\n" +
+                                    "                  ████        ███████████▓▓██\n" +
+                                    "                   ██████            ██▓▓▓▓██\n" +
+                                    "                  ██▓▓▓▓████████████▓▓██\n" +
+                                    "                ██▓▓▓▓▓▓▓▓██        ████\n" +
+                                    "              ████▓▓▓▓▓▓██             ██\n" +
+                                    "              ████▓▓▓▓▓▓██            ██\n" +
+                                    "              ██████▓▓▓▓▓▓██      █████\n" +
+                                    "                ██████▓▓▓▓████████████████\n" +
+                                    "                  ████████████████████▓▓▓▓██\n" +
+                                    "                ██▓▓▓▓██████████████▓▓▓▓▓▓██\n" +
+                                    "              ████▓▓████████████████▓▓▓▓▓▓██\n" +
+                                    "              ██▓▓▓▓████████████████▓▓▓▓▓▓██\n" +
+                                    "              ██▓▓▓▓████████──────██▓▓▓▓████\n" +
+                                    "              ██▓▓▓▓████──────────────██████\n" +
+                                    "                ████");
+                        }
+                else if(choice.equals("luigi")&& mlb[generatedNumber].equals("BOWSER")) {
+                    compScore++;
+                    System.out.println("BOWSER WINS. \nYOU: "+userScore+"\nCOMPUTER: "+compScore);
+                    System.out.println(
+                            "                  ▄█       █            █\n" +
+                                    "                ▐██      ▄█   ███    █▄        ██▌\n" +
+                                    "                ▐██▀     ████████████     ▀██▌\n" +
+                                    "               ▐██▌     ██████████████    ▐██▌\n" +
+                                    "               ████   ███████████████    ████\n" +
+                                    "              ▐█████  ███████████████  █████▌\n" +
+                                    "               ███████████████████████████\n" +
+                                    "               ██████████████████████████\n" +
+                                    "                 ████      ▀█████▀      █████\n" +
+                                    "               ▄▄████▄     █████     ▄████▄▄\n" +
+                                    "              ███████████████████████████\n" +
+                                    "             ████████████████████████████\n" +
+                                    "            ▐██████████▀▄██▄▀████████████\n" +
+                                    "            ▐██████   ███████████   ███████\n" +
+                                    "            ▐██████    ███▀  ▀████   █████▌██\n" +
+                                    "             ██████▄    ███    ███   ▄███████\n" +
+                                    "              ███████     █      █    ████████\n" +
+                                    "               ██████                    ██████\n" +
+                                    "                 ██████                ██████\n" +
+                                    "                  █████   ▄        ▄   █████\n" +
+                                    "                   █████ ██       ██ █████\n" +
+                                    "                   ███████ ▄██▄ ███████\n" +
+                                    "                  █████████████████████\n" +
+                                    "                  █████████████████████\n" +
+                                    "                  ▀████████▀▀█████████▀\n" +
+                                    "                     ▀████▀      ▀█████▀\n"); }
+                else if (choice.equals("bowser")&& mlb[generatedNumber].equals("MARIO")) {
+                    compScore++;
+                    System.out.println("MARIO WINS. \nYOU: "+userScore+"\nCOMPUTER: "+compScore);
+                    System.out.println(
+                            "                              ███████──███████\n" +
+                                    "                       ████▓▓▓▓▓▓████░░░░░██\n" +
+                                    "                     ██▓▓▓▓▓▓▓▓▓▓▓▓██░░░░░░██\n" +
+                                    "                   ██▓▓▓▓▓▓████████████░░░░██\n" +
+                                    "                  ██▓▓▓▓▓▓████████████████░██\n" +
+                                    "                  ██▓▓████░░░░░░░░░░░░██████\n" +
+                                    "                ████████░░░░░░██░░██░░██▓▓▓▓██\n" +
+                                    "                ██░░████░░░░░░██░░██░░██▓▓▓▓██\n" +
+                                    "              ██░░░░██████░░░░░░░░░░░░░░██▓▓██\n" +
+                                    "              ██░░░░░░██░░░░██░░░░░░░░░░██▓▓██\n" +
+                                    "              ██░░░░░░░░░███████░░░░██████\n" +
+                                    "                 ████░░░░░░░███████████▓▓██\n" +
+                                    "                   ██████░░░░░░░░░░██▓▓▓▓██\n" +
+                                    "                  ██▓▓▓▓██████████████▓▓██\n" +
+                                    "               ██▓▓▓▓▓▓▓▓████░░░░░░████\n" +
+                                    "              ████▓▓▓▓▓▓▓▓██░░░░░░░░░░██\n" +
+                                    "              ████▓▓▓▓▓▓▓▓██░░░░░░░░░░██\n" +
+                                    "              ██████▓▓▓▓▓▓▓▓██░░░░░░████████\n" +
+                                    "                ██████▓▓▓▓▓▓████████████████\n" +
+                                    "                 ██████████████████████▓▓▓▓██\n" +
+                                    "               ██▓▓▓▓████████████████▓▓▓▓▓▓██\n" +
+                                    "              ████▓▓██████████████████▓▓▓▓▓▓██\n" +
+                                    "              ██▓▓▓▓██████████████████▓▓▓▓▓▓██\n" +
+                                    "              ██▓▓▓▓██████████──────██▓▓▓▓████\n" +
+                                    "              ██▓▓▓▓████──────────────██████\n" +
+                                    "                ████"); }
+                else if(choice.equals("mario")&& mlb[generatedNumber].equals("MARIO")) {
+                    System.out.println("HUH? WE PICKED THE SAME THING. BOO. AGAIN!\nYOU: "+userScore+"\nCOMPUTER: "+compScore);
+                }
+                else if(choice.equals("luigi")&& mlb[generatedNumber].equals("LUIGI")) {
+                    System.out.println("HUH? WE PICKED THE SAME THING. BOO. AGAIN!\nYOU: "+userScore+"\nCOMPUTER: "+compScore);
+                }
+                else if(choice.equals("bowser")&& mlb[generatedNumber].equals("BOWSER")) {
+                    System.out.println("HUH? WE PICKED THE SAME THING. BOO. AGAIN!\nYOU: "+userScore+"\nCOMPUTER: "+compScore);
+                }
                 System.out.println("Would you like to play again? (yes or no)");
                 playAgain = keyboard.nextLine();
+                if(playAgain.equals("yes")){
+
+                }
+
+                else if(playAgain.equals("no")){System.out.println("BOO.\nHERE IS THE SCORE:\nYOU:"+userScore+"\nCOMPUTER:"+compScore);
+                    value=false; }
 
             }
-
-
+        if(value=false){break;}
         }
+
     }
 }
