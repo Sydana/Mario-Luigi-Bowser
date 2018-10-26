@@ -99,7 +99,7 @@ public class MarioGame {
         int userScore = 0;
         int compScore = 0;
         Scanner keyboard;
-        String playAgain;
+        String playAgain = "";
         boolean value = true;
         String choice;
         String [] mlb = {"MARIO","LUIGI","BOWSER"};
@@ -114,8 +114,7 @@ public class MarioGame {
         System.out.println("THE GAME IS SIMPLE:");
         System.out.println("THERE ARE THREE OPTIONS TO CHOOSE FROM:\nMARIO\nLUIGI\nBOWSER");
         System.out.println("MARIO BEATS BOWSER, LUIGI BEATS MARIO, AND BOWSER BEATS LUIGI");
-        System.out.println("YOU TYPE THE CHARACTER OF YOUR CHOICE AND I CHOOSE ONE, AND WHOEVER WINS GETS A POINT.\nWHOEVER GETS THE MOST POINTS IN THE END WINS"+
-                            "\nBEST OUT OF THREE");
+        System.out.println("YOU TYPE THE CHARACTER OF YOUR CHOICE AND I CHOOSE ONE, AND WHOEVER WINS GETS A POINT.\nWHOEVER GETS THE MOST POINTS IN THE END WINS");
         System.out.println("\nREADY?\nLET'S A GO\n");
 
         while (value) {
@@ -251,13 +250,13 @@ public class MarioGame {
                     compScore++;
                     System.out.println("BOWSER WINS. \nYOU: "+userScore+"\nCOMPUTER: "+compScore);
                     System.out.println(
-                            "                  ▄█       █            █\n" +
-                                    "                ▐██      ▄█   ███    █▄        ██▌\n" +
-                                    "                ▐██▀     ████████████     ▀██▌\n" +
-                                    "               ▐██▌     ██████████████    ▐██▌\n" +
-                                    "               ████   ███████████████    ████\n" +
-                                    "              ▐█████  ███████████████  █████▌\n" +
-                                    "               ███████████████████████████\n" +
+                                    "                  ▄█       █           █       █▄\n" +
+                                    "                ▐██      ▄█   ███   █▄       ██▌\n" +
+                                    "                ▐██▀     ███████████      ██▌\n" +
+                                    "               ▐██▌     █████████████    ▐██▌\n" +
+                                    "               ████   ███████████████   ███\n" +
+                                    "              ▐█████  █████████████  █████▌\n" +
+                                    "               ██████████████████████████\n" +
                                     "               ██████████████████████████\n" +
                                     "                 ████      ▀█████▀      █████\n" +
                                     "               ▄▄████▄     █████     ▄████▄▄\n" +
@@ -281,7 +280,7 @@ public class MarioGame {
                     compScore++;
                     System.out.println("MARIO WINS. \nYOU: "+userScore+"\nCOMPUTER: "+compScore);
                     System.out.println(
-                            "                              ███████──███████\n" +
+                                    "                              ███████──███████\n" +
                                     "                       ████▓▓▓▓▓▓████░░░░░██\n" +
                                     "                     ██▓▓▓▓▓▓▓▓▓▓▓▓██░░░░░░██\n" +
                                     "                   ██▓▓▓▓▓▓████████████░░░░██\n" +
@@ -298,7 +297,7 @@ public class MarioGame {
                                     "               ██▓▓▓▓▓▓▓▓████░░░░░░████\n" +
                                     "              ████▓▓▓▓▓▓▓▓██░░░░░░░░░░██\n" +
                                     "              ████▓▓▓▓▓▓▓▓██░░░░░░░░░░██\n" +
-                                    "              ██████▓▓▓▓▓▓▓▓██░░░░░░████████\n" +
+                                    "              ██████▓▓▓▓▓▓▓▓██░░░░░░█████\n" +
                                     "                ██████▓▓▓▓▓▓████████████████\n" +
                                     "                 ██████████████████████▓▓▓▓██\n" +
                                     "               ██▓▓▓▓████████████████▓▓▓▓▓▓██\n" +
@@ -322,11 +321,14 @@ public class MarioGame {
 
                 }
 
-                else if(playAgain.equals("no")){System.out.println("BOO.\nHERE IS THE SCORE:\nYOU:"+userScore+"\nCOMPUTER:"+compScore);
-                    value=false; }
+                if(playAgain.equals("no")){
+                    System.out.println("BOO.\nHERE IS THE SCORE:\nYOU:"+userScore+"\nCOMPUTER:"+compScore);
+                    break;}
 
             }
-        if(value=false){break;}
+            if(playAgain.equals("no")){
+                break;
+            }
         }
 
     }
